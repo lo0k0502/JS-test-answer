@@ -11,7 +11,7 @@ const factories = [
 const employeesNumberByFactory = (factories) => {
       const tmp = [];
 
-      // For each factory, package their name and employees number into a object then add it into the temporary array.
+      // For each factory, add an object of their name and employees number into the temporary array.
       factories.forEach((factory) => {
             tmp.push({ name: factory.name, count: factory.employees.length });
       });
@@ -139,7 +139,7 @@ console.log("\n");
 const howManyEmployeeByTime = (time/* Assume the format is string and looks like "hh:mm:ss" */) => {
       let sum = 0;
       const time_array = time.split(":"); // "12:00:00" => [ "12", "00", "00" ]
-      const working_type = []; // ID of employeeType that is currently working.
+      const working_type = []; // IDs of employeeType of employees who are currently working.
 
       employeeType.forEach((type) => {
             const work_begin_array = type.work_begin.split(":"); // "09:00:00" => [ "09", "00", "00" ]
@@ -179,7 +179,7 @@ console.log(howManyEmployeeByTime("09:00:00"));
 console.log("\n");
 
 
-// 6. How many days of work needed to done all tasks ? // => 1 day = 9:00 to 00:00 between 00:00 and 09:00 doesnt count.
+// 6. How many days of work needed to done all tasks ? // => 1 day = 9:00 to 00:00 between 00:00 and 09:00 doesn't count.
 const daysToDoneAllTasks = (tasks) => {
       let result = 0;
 
